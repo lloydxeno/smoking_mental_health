@@ -3,6 +3,14 @@ This contains the code for the survival models in the paper "Using polygenic ris
 
 The data file is originally in wide format (one record per person), until the records are split at each failure event to deal with non-proportionality. The variables and their descriptions are:
 
+println!("{}",
+    table!(
+        "{^:10:}" => "Variable name", "{^:10:}" => "Definition";
+        "id", "Subject identifier", "", "10", "Steak", "6"
+    ).format()
+);
+
+
 id	                        Subject identifier
 state1	                    Smoking status at birth (constant: 1 = non-smoker)
 age1	                      Set to 0 for all records
@@ -13,9 +21,6 @@ age3	                      Age stopped smoking
 state4	                    Mental health hospitalization
 age4	                      Age at first mental health hospitalization
 smok3cat	                  Last smoking status:
-                                0 = Never
-                                1 = Previous
-                                2 = Current
 prs_evsmk	                  Polygenic risk score for ever smoking
 Neur_prs	                  Polygenic risk score for neuroticism
 Prs_pkyrs	                  Polygenic risk score for pack-years of smoking
